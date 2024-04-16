@@ -2,104 +2,168 @@
     <section class="section-profile-cover section-shaped my-0">
         <!-- Circles background -->
         <div class="shape shape-style-1 shape-default alpha-4">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <!-- SVG separator -->
         <div class="separator separator-bottom separator-skew">
-          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-          </svg>
+            <svg
+                x="0"
+                y="0"
+                viewBox="0 0 2560 100"
+                preserveAspectRatio="none"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <polygon
+                    class="fill-white"
+                    points="2560 0 2560 100 0 100"
+                ></polygon>
+            </svg>
         </div>
-      </section>
-      <section>
+    </section>
+    <section>
         <div class="container">
             <div class="card shadow mt--300">
-                    <div class="card-header">
-                        <h3>Configurações do sorteio</h3>
-                    </div>
-                    <div class="card-body justify-content-center align-items-center">
-                        <button type="button" class="btn btn-warning btn-lg btn-block" (click)="openSortSaintCard()">Realizar sorteio</button>
-                    </div>
-                    <div class="card-body justify-content-center align-items-center">
-                        <button type="button" class="btn btn-info btn-lg btn-block" (click)="openAddSaintCard()">Adicionar novo santo</button>
-                    </div>
-                    <div class="card-body justify-content-center align-items-center">
-                        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="openNonSortedSaintsListCard()">Ver listagem dos santos que ainda podem sorteados</button>
-                    </div>
-                    <div class="card-body justify-content-center align-items-center">
-                        <button type="button" class="btn btn-success btn-lg btn-block" (click)="openSortedSaintsListCard()">Ver listagem dos santos já sorteados</button>
-                    </div>
+                <div class="card-header">
+                    <h3>Sorteie aqui seu Santo</h3>
+                </div>
+                <div
+                    class="card-body justify-content-center align-items-center"
+                >
+                    <button
+                        type="button"
+                        class="btn btn-warning btn-lg btn-block"
+                        (click)="openSortSaintCard()"
+                    >
+                        Realizar sorteio
+                    </button>
+                </div>
+                <div
+                    class="card-body justify-content-center align-items-center"
+                >
+                    <button
+                        type="button"
+                        class="btn btn-info btn-lg btn-block"
+                        (click)="openAddSaintCard()"
+                    >
+                        Adicionar novo santo
+                    </button>
+                </div>
+                <div
+                    class="card-body justify-content-center align-items-center"
+                >
+                    <button
+                        type="button"
+                        class="btn btn-primary btn-lg btn-block"
+                        (click)="openNonSortedSaintsListCard()"
+                    >
+                        Ver listagem dos santos que ainda podem sorteados
+                    </button>
+                </div>
+                <div
+                    class="card-body justify-content-center align-items-center"
+                >
+                    <button
+                        type="button"
+                        class="btn btn-success btn-lg btn-block"
+                        (click)="openSortedSaintsListCard()"
+                    >
+                        Ver listagem dos santos já sorteados
+                    </button>
+                </div>
             </div>
         </div>
-        <br>
+        <br />
         <div class="container">
             <div class="card shadow" *ngIf="visibleSortSaintCard == true">
-                <div >
+                <div>
                     <div class="card-header">
                         <h3>Sortear santo</h3>
                     </div>
                     <div class="card-body">
-                        <div class="card-body justify-content-center align-items-center">
-                            <button type="button" class="btn btn-warning btn-lg btn-block" (click)="sortSaint()">Realizar sorteio</button>
+                        <div
+                            class="card-body justify-content-center align-items-center"
+                        >
+                            <button
+                                type="button"
+                                class="btn btn-warning btn-lg btn-block"
+                                (click)="sortSaint()"
+                            >
+                                Realizar sorteio
+                            </button>
                         </div>
                         <div *ngIf="visibleSortedSaint == true">
                             <p><bold>Seu santo que foi sorteado é:</bold></p>
-                            <h3>{{sortedSaint}}</h3>
+                            <h3>{{ sortedSaint }}</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
+        <br />
         <div class="container">
             <div class="card shadow" *ngIf="visibleAddSaintModal == true">
-                <div >
+                <div>
                     <div class="card-header">
                         <h3>Adicionar novo santo</h3>
                     </div>
                     <div class="card-body">
                         <form>
                             <div class="row">
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <input type="text" class="form-control" id="saintName" placeholder="Digite aqui o nome do Santo">
-                                </div>
-                              </div>
-                              <!-- <div class="col-md-6">
-                                <div class="row justify-content-start">
-                                    <div class="align-items-center">
-                                      <button type="button" class="btn btn-success" style="margin-right: 10px;" (click)="addSaint()">Adicionar</button>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="saintName"
+                                            placeholder="Digite aqui o nome do Santo"
+                                        />
                                     </div>
                                 </div>
-                              </div> -->
+                                <div class="col-md-6">
+                                    <div class="row justify-content-start">
+                                        <div class="align-items-center">
+                                            <button
+                                                type="button"
+                                                class="btn btn-success"
+                                                style="margin-right: 10px"
+                                            >
+                                                Adicionar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
+        <br />
         <div class="container">
-            <div class="card shadow" *ngIf="visibleNonSortedSaintListCard == true">
+            <div
+                class="card shadow"
+                *ngIf="visibleNonSortedSaintListCard == true"
+            >
                 <div>
                     <div class="card-header">
                         <h3>Lista dos Santos que ainda podem ser sorteados</h3>
                     </div>
                     <div class="card-body">
                         <ul *ngFor="let saint of nonSortedSaints">
-                            <li>{{saint.name}}</li>
+                            <li>{{ saint.name }}</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <br>
+        <br />
         <div class="container">
             <div class="card shadow" *ngIf="visibleSortedSaintListCard == true">
                 <div>
@@ -108,14 +172,12 @@
                     </div>
                     <div class="card-body">
                         <ul *ngFor="let saint of sortedSaints">
-                            <li>{{saint.name}}</li>
+                            <li>{{ saint.name }}</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-      </section>
-      <br>
+    </section>
+    <br />
 </main>
-
-
