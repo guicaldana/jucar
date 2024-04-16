@@ -1,3 +1,4 @@
+import { SortComponent } from './sort/sort.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
+    { path: 'sort',             component: SortComponent },
     { path: 'user-profile',     component: ProfileComponent },
     { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
