@@ -24,7 +24,7 @@
               <p class="lead text-white">Juventude Carmelitana</p>
               <div class="btn-wrapper mt-5">
                 <div class="align-items-center">
-                  <button type="button" class="btn btn-default" routerLink="/sort"><span class="text-warning">Ir para</span> sorteador</button>
+                  <button type="button" class="btn btn-default" (click)="sortSaint()">Descubra aqui seu <span class="text-warning">Santo Carmelita</span></button>
                 </div>
               </div>
             </div>
@@ -40,4 +40,23 @@
     </section>
   </div>
   <!--<app-sections></app-sections>-->
+  <div class="container">
+    <div class="card shadow" *ngIf="visibleSortSaintCard == true">
+        <div>
+            <div class="card-header">
+                <h3>Seu santo é...</h3>
+            </div>
+            <div class="card-body justify-content-center">
+                <div class="row justify-content-center" *ngIf="visibleSortedSaint == true">
+                  <div class="col-lg-6 justify-content-center">
+                    <h3>{{ sortedSaint }}</h3>
+                    <img src="{{ sortedSaintImage }}" class="img-fluid">
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
 </main>
+
+
