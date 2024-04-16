@@ -156,9 +156,14 @@
                         <h3>Lista dos Santos que ainda podem ser sorteados</h3>
                     </div>
                     <div class="card-body">
-                        <ul *ngFor="let saint of nonSortedSaints">
-                            <li>{{ saint.name }}</li>
-                        </ul>
+                        <div *ngIf="nonSortedSaints != 0">
+                            <ul *ngFor="let saint of nonSortedSaints">
+                                <li>{{ saint.name }}</li>
+                            </ul>
+                        </div>
+                        <div *ngIf="nonSortedSaints == 0">
+                            Não há mais santos a serem sorteados
+                        </div>
                     </div>
                 </div>
             </div>
@@ -171,9 +176,14 @@
                         <h3>Lista dos Santos já sorteados</h3>
                     </div>
                     <div class="card-body">
-                        <ul *ngFor="let saint of sortedSaints">
-                            <li>{{ saint.name }}</li>
-                        </ul>
+                        <div *ngIf="sortedSaints != 0">
+                            <ul *ngFor="let saint of sortedSaints" >
+                                <li>{{ saint.name }}</li>
+                            </ul>
+                        </div>
+                        <div *ngIf="sortedSaints == 0">
+                            Não há santos sorteados ainda
+                        </div>
                     </div>
                 </div>
             </div>

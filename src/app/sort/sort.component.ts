@@ -1,7 +1,5 @@
-import { SortService } from "./../services/sort.service";
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
-import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
     selector: "app-sort",
@@ -56,6 +54,11 @@ export class SortComponent implements OnInit {
             name: "Saint Matthias",
         },
     ];
+
+    // public addSaintForm: FormGroup = this.formBuilder.group({
+    //     saintName: ["", Validators.required],
+    // });
+
     public sortedSaints = [];
     public nonSortedSaints = [];
 
@@ -66,11 +69,8 @@ export class SortComponent implements OnInit {
     public visibleNonSortedSaintListCard: boolean;
     public visibleSortSaintCard: boolean;
 
-    constructor(
-        private modalService: NgbModal,
-        private sortService: SortService,
-        private formBuilder: FormBuilder
-    ) {}
+    constructor() // private formBuilder: FormBuilder
+    {}
 
     ngOnInit(): void {
         this.visibleSortedSaint = false;
@@ -101,14 +101,11 @@ export class SortComponent implements OnInit {
     }
 
     public openNonSortedSaintsListCard() {
-        if (this.nonSortedSaints.length == 0) {
-            this.visibleNonSortedSaintListCard = false;
-        } else this.visibleNonSortedSaintListCard = true;
+        this.visibleNonSortedSaintListCard = true;
     }
 
     public openSortedSaintsListCard() {
-        if (this.sortedSaints.length == 0) {
-            this.visibleSortedSaintListCard = false;
-        } else this.visibleSortedSaintListCard = true;
+        
+        this.visibleSortedSaintListCard = true;
     }
 }
