@@ -69,8 +69,7 @@ export class SortComponent implements OnInit {
     public visibleNonSortedSaintListCard: boolean;
     public visibleSortSaintCard: boolean;
 
-    constructor() // private formBuilder: FormBuilder
-    {}
+    constructor() {} // private formBuilder: FormBuilder
 
     ngOnInit(): void {
         this.visibleSortedSaint = false;
@@ -105,7 +104,6 @@ export class SortComponent implements OnInit {
     }
 
     public openSortedSaintsListCard() {
-        
         this.visibleSortedSaintListCard = true;
     }
 }
