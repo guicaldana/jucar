@@ -94,6 +94,7 @@ export class HomeComponent implements OnInit {
         this.nonSortedSaints.splice(index, 1);
         this.visibleSortedSaint = true;
         this.visibleSortSaintCard = true;
-        window.scrollTo(0, document.body.scrollHeight);
+        
     }
+
 }

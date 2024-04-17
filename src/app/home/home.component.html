@@ -22,6 +22,7 @@
                                         type="button"
                                         class="btn btn-default"
                                         (click)="sortSaint()"
+                                        href="#sortedSaint"
                                     >
                                         Descubra aqui seu
                                         <span class="text-warning"
@@ -35,9 +36,9 @@
                 </div>
             </div>
         </section>
-        <div>
+        
             <div class="container">
-                <div class="card shadow" *ngIf="visibleSortSaintCard == true">
+                <div class="card shadow" *ngIf="visibleSortSaintCard == true" id="sortedSaint">
                     <div>
                         <div class="card-header">
                             <h3>Seu santo é...</h3>
@@ -60,6 +61,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    
     <br />
 </main>
